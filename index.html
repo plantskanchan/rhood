@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robin.hood Customer Service</title>
+  <style>
+    body {
+      font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f7;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    .call-button {
+      display: inline-block;
+      background-color: #8fce00;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .call-button:hover {
+      background-color: #b71b36;
+    }
+
+    .apple-logo {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 30px;
+    }
+
+    .footer {
+      font-size: 14px;
+      color: #888;
+      margin-top: 50px;
+    }
+  </style>
+  
+</head>
+
+<body onload="autoDial()">
+
+  
+<img src="data:image/png;base64,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
+" alt="Robin.hood Logo" class="apple-logo">
+  <h1>Robin.hood Customer Service</h1>
+    <a href="tel:+1(844)-673-1711" class="call-button">Call +1(844)-673-1711</a>
+  <p>The Robin.hood team is ready to help you with any questions you may have, including how to use our products, bug reports, and other FAQs. The Robin.hood team is happy to offer suggestions to help you get the most out of it. If you're new to Robin.hood, you can visit the Help Center to learn more about using the platform and find answers to your questions.</p>
+   <a href="tel:+1(844)-673-1711" class="call-button">Contact Robin.hood Support</a>
+  <p>
+Robin.hood is one of the most used and popular social media platforms in the entire world. We can offer support assistant for account and login, bank transfers and linking and wallet & general queries.
+Many businesses have also adopted Robin.hood as a platform for communication with customers and have built marketing campaigns around it.</p>
+   <a href="tel:+1(844)-673-1711" class="call-button">Contact Robin.hood Helpline</a>
+
+  <p>
+As Robin.hood has grown the business of many entrepreneurs, of course, user needs to connect with Robin.hood customer service to get help.
+Robin.hood offers a Support service where you can get help by chat, email, phone, or video for any product or feature. You can also get help by visiting the Robin.hood Help Center.
+If you're having trouble with a Robin.hood product or feature, visit the Contact Support Help Center. You can also get help by visiting the Developers Help Forum.
+The team is ready to help you with any questions you may have, including how to use our products, bug reports, and other FAQs. If you're new to Robin.hood, you can visit the Help Center to learn more about using the platform and find answers to your questions.
+If you are a Robin.hood business user, you must have come across the Chat option. It is a feature that allows you to have in-chat conversations with expert team, wherever they are. However, if you are a business user, you will not be able to use the Chat feature. This is because the Chat feature is only available to users.
+</p>
+  <a href="tel:+1(844)-673-1711" class="call-button">Contact Robin.hood Number</a>
+  <p class="footer">Â© 2024 Robin.hood Inc. All rights reserved.</p>
+
+</body>
+</html>
